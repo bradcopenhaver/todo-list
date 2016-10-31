@@ -1,3 +1,11 @@
+body {
+  height: 100%;
+  background: url('../img/bg.png') top left repeat;
+  text-shadow: 2px 2px 2px #fff,
+               2px 2px 2px #fff,
+               2px 2px 2px #fff;
+}
+
 button {
   margin: 10px 0px;
 }
@@ -18,4 +26,15 @@ button {
 ul {
   list-style: none;
   padding-left: 0;
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+#img-fixer {
+  border: 3px solid #000;
+  border-radius: 8px;
+  max-width: 80%;
+  margin: 0 auto;
 }
