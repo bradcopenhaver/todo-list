@@ -11,6 +11,7 @@ Item.prototype.displayItem = function () {
 
 
 
+
 $(document).ready(function() {
   $("form").submit(function(event){
     event.preventDefault();
@@ -20,35 +21,29 @@ $(document).ready(function() {
 
     var item = new Item(taskInput, priorityInput);
 
+    var doneTask = function(that) {
+      $(that).parent().fadeOut();
+      $("#done").append($(that).parent());
+      $("#doneList").show();
+      $(that).parent().fadeIn();
+      $("#done li span").removeClass();
+    }
+
     if (priorityInput === "High") {
       $("#notDone").prepend("<li>" + item.displayItem() + "  <span class='glyphicon glyphicon-remove clickable'></span></li>");
 
       $(".clickable").first().click(function(){
-        $(this).parent().fadeOut();
-        $("#done").append($(this).parent());
-        $("#doneList").show();
-        $(this).parent().fadeIn();
+        doneTask(this);
       });
-    }
-    else {
+    } else {
       $("#notDone").append("<li>" + item.displayItem() + "  <span   class='glyphicon glyphicon-remove clickable'></span></li>");
 
       $(".clickable").last().click(function(){
-        $(this).parent().fadeOut();
-        $("#done").append($(this).parent());
-        $("#doneList").show();
-        $(this).parent().fadeIn();
-
-
+        doneTask(this);
       });
     }
+
     $("#task").val("");
-
-    // $(".clickable").last().click(function(){
-    //   $(this).parent().fadeOut();
-    //
-    // });
   });
-
 
 });
