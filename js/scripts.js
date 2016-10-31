@@ -2,7 +2,6 @@
 function Item(task, priority) {
   this.task = task;
   this.priority = priority;
-  this.done = false;
 }
 
 Item.prototype.displayItem = function () {
@@ -22,27 +21,33 @@ $(document).ready(function() {
     var item = new Item(taskInput, priorityInput);
 
     if (priorityInput === "High") {
-      $("#output ul").prepend("<li>" + item.displayItem() + "  <span class='glyphicon glyphicon-remove clickable'></span></li>");
+      $("#notDone").prepend("<li>" + item.displayItem() + "  <span class='glyphicon glyphicon-remove clickable'></span></li>");
 
       $(".clickable").first().click(function(){
         $(this).parent().fadeOut();
-
+        $("#done").append($(this).parent());
+        $("#doneList").show();
+        $(this).parent().fadeIn();
       });
     }
     else {
-      $("#output ul").append("<li>" + item.displayItem() + "  <span   class='glyphicon glyphicon-remove clickable'></span></li>");
+      $("#notDone").append("<li>" + item.displayItem() + "  <span   class='glyphicon glyphicon-remove clickable'></span></li>");
 
       $(".clickable").last().click(function(){
         $(this).parent().fadeOut();
+        $("#done").append($(this).parent());
+        $("#doneList").show();
+        $(this).parent().fadeIn();
+
 
       });
     }
     $("#task").val("");
 
-    $(".clickable").last().click(function(){
-      $(this).parent().fadeOut();
-
-    });
+    // $(".clickable").last().click(function(){
+    //   $(this).parent().fadeOut();
+    //
+    // });
   });
 
 

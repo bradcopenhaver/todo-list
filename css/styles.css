@@ -2,7 +2,16 @@ button {
   margin: 10px 0px;
 }
 
+#doneList {
+  display: none;
+}
+
 .clickable {
   cursor: pointer;
   color: crimson;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
 }
