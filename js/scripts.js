@@ -9,8 +9,10 @@ Item.prototype.displayItem = function () {
 };
 
 
-
-
+// add a span to li, and the glyphicon
+// give span class clickable
+// $(.clickable).clickfunction() {
+  // fadeout the parent (list)}
 
 $(document).ready(function() {
   $("form").submit(function(event){
@@ -24,6 +26,7 @@ $(document).ready(function() {
     var doneTask = function(that) {
       $(that).parent().fadeOut();
       $("#done").append($(that).parent());
+      $(that).parent().addClass("done");
       $("#doneList").show();
       $(that).parent().fadeIn();
       $("#done li span").removeClass();

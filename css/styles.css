@@ -6,6 +6,10 @@ button {
   display: none;
 }
 
+.done {
+  text-decoration: line-through;
+  display: none;
+}
 .clickable {
   cursor: pointer;
   color: crimson;
