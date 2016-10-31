@@ -1,0 +1,8 @@
+button {
+  margin: 10px 0px;
+}
+
+.clickable {
+  cursor: pointer;
+  color: crimson;
+}
